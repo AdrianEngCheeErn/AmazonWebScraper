@@ -79,3 +79,4 @@ def parse_listing(listing_url):
 data = []
 search_url = "https://www.amazon.com/s?k=bose&rh=n%3A12097479011&ref=nb_sb_noss"
 data = parse_listing(search_url)
+print(data)
