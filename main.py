@@ -61,6 +61,7 @@ def parse_listing(listing_url):
         full_url = urljoin(listing_url, link.attrs.get("href"))
         if full_url not in visited_urls:
             visited_urls.add(full_url)
+            print(f"Scraping product from {full_url} \n")
             product_info = get_product_info(full_url)
             if product_info:
                 page_data.append(product_info)
@@ -79,4 +80,5 @@ def parse_listing(listing_url):
 data = []
 search_url = "https://www.amazon.com/s?k=bose&rh=n%3A12097479011&ref=nb_sb_noss"
 data = parse_listing(search_url)
-print(data)
+df = pd.DataFrame(data)
+df.to_csv("headphones.csv")
