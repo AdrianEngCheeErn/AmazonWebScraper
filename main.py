@@ -76,9 +76,17 @@ def parse_listing(listing_url):
     return page_data
 
 
-
-data = []
+#Check headphone item category
+data_headphone = []
 search_url = "https://www.amazon.com/s?k=bose&rh=n%3A12097479011&ref=nb_sb_noss"
-data = parse_listing(search_url)
-df = pd.DataFrame(data)
+data_headphone = parse_listing(search_url)
+df = pd.DataFrame(data_headphone)
 df.to_csv("headphones.csv")
+
+
+#Check keyboard item category
+data_keyboard = []
+search_url = "https://www.amazon.com/s?k=keyboard&i=electronics-intl-ship&crid=1DCSWSAQSZ51W&sprefix=ke%2Celectronics-intl-ship%2C665&ref=nb_sb_noss_2"
+data_headphone = parse_listing(search_url)
+df = pd.DataFrame(data_headphone)
+df.to_csv("keyboards.csv")
